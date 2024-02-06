@@ -6,6 +6,7 @@ class Post(models.Model):
     id = models.AutoField(primary_key=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
+    short_description = models.CharField(max_length=300, null=True, blank=True)
     content = models.TextField()
     thumbnail_img = models.ImageField(null=True, blank=True, upload_to="images/")
     thumbnail_url = models.URLField(blank=True, null=True)
